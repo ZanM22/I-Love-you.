@@ -208,7 +208,7 @@ document.addEventListener('click', function autoStart() {
       setTimeout(() => { player.style.transform = ''; }, 400);
     }
   }
-}, { once: true });
+}, { once: true }
 
 // ── CHAPTER NUMBERS PARALLAX ──────────────────
 window.addEventListener('scroll', () => {
@@ -219,3 +219,15 @@ window.addEventListener('scroll', () => {
     n.style.transform = `translateY(${progress * 30}px)`;
   });
 }, { passive: true });
+
+// Auto play setelah 5 detik
+setTimeout(function() {
+  const music = document.getElementById('bgMusic');
+  const icon = document.getElementById('musicToggle');
+  music.play().then(function() {
+    isPlaying = true;
+    icon.classList.remove('paused');
+  }).catch(function() {
+    // browser blokir autoplay, user harus klik dulu
+  });
+}, 5000);
