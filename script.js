@@ -218,7 +218,7 @@ window.addEventListener('scroll', () => {
     const progress = -rect.top / window.innerHeight;
     n.style.transform = `translateY(${progress * 30}px)`;
   });
-}, { passive: true });
+}, { passive: true }
 
 // Auto play setelah 5 detik
 setTimeout(function() {
